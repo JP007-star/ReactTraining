@@ -1,39 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { Footer } from '../../components/Footer'
+import { Form } from '../../components/Form';
 import { Header } from '../../components/Header'
+import  MyComponent  from '../../components/MyComponent';
+import NewComponent from '../../components/NewComponent';
+
 
 
 /**
 * @author
-* @function Home
+* @function NewComponent
 **/
 
 export const Home = () => {
-
-
-
-const [time,setTime]=useState(new Date());
-
-
-
-
-  useEffect(()=>{
-      const timer=setInterval(()=>{
-        setTime(new Date());
-      },1000)
-  },[])
-
-
-
   return(
     <>
-      <Header   name="Ram" style={{color:"red"}}/>
-      <center>
-      <div>Welcome Home</div>
-      <h1>{time.toLocaleTimeString}</h1>
-      </center>
-      
-      <Footer/>
+      <NewComponent/>
     </>
      
    )

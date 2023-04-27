@@ -5,34 +5,47 @@ import React from 'react'
 * @function MyComponent
 **/
 
-export const MyComponent = (props) => {
-    state = { count: 0 };
-
-  componentDidMount = () => {
-    console.log('Component did mount');
-  };
-
-  componentDidUpdate = (prevProps, prevState) => {
-    if (this.state.count !== prevState.count) {
-      console.log('Component did update');
-    }
-  };
-
-  componentWillUnmount = () => {
-    console.log('Component will unmount');
-  };
-
-  handleClick = () => {
-    this.setState({ count: this.state.count + 1 });
-  };
-  return(
-    <div>
-        <p>Count: {this.state.count}</p>
-        <button onClick={this.handleClick}>Increment</button>
-      </div>
-   )
-
- }
+class MyComponent extends React.Component {  
+  constructor(props) {  
+     super(props);  
+     this.state = {hello: "Jaya Prasad"};    
+     this.changeState = this.changeState.bind(this)  
+  }    
+  render() {  
+     return (  
+        <div>  
+            <h1>ReactJS component's Lifecycle</h1>  
+            <h3>Hello {this.state.hello}</h3>  
+            <button onClick = {this.changeState}>Click Here!</button>          
+        </div>  
+     );  
+  }  
+  componentWillMount() {  
+     console.log('Component Will MOUNT!')  
+  }  
+  componentDidMount() {  
+     console.log('Component Did MOUNT!')  
+  }  
+  changeState(){  
+     this.setState({hello:"All!!- Its a great reactjs tutorial."});  
+  }  
+  componentWillReceiveProps(newProps) {      
+     console.log('Component Will Recieve Props!')  
+  }  
+  shouldComponentUpdate(newProps, newState) {  
+     return true;  
+  }  
+  componentWillUpdate(nextProps, nextState) {  
+     console.log('Component Will UPDATE!');  
+  }  
+  componentDidUpdate(prevProps, prevState) {  
+     console.log('Component Did UPDATE!')  
+  }  
+  componentWillUnmount() {  
+     console.log('Component Will UNMOUNT!')  
+  }  
+}  
+export default MyComponent;  
 
 
 /*In this example, we define a MyComponent class that extends Component from React. We set the initial state of the component to { count: 0 } using the class property syntax.
