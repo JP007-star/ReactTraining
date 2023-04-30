@@ -7,8 +7,9 @@ import React from 'react'
 
 class MyComponent extends React.Component {  
   constructor(props) {  
-     super(props);  
-     this.state = {hello: "Jaya Prasad"};    
+     super(props);
+     const obj={hello: "Jaya Prasad"}  
+     this.state = obj;    
      this.changeState = this.changeState.bind(this)  
   }    
   render() {  
@@ -48,11 +49,18 @@ class MyComponent extends React.Component {
 export default MyComponent;  
 
 
-/*In this example, we define a MyComponent class that extends Component from React. We set the initial state of the component to { count: 0 } using the class property syntax.
+/*In this example, 
+we define a MyComponent 
+class that extends Component from React. 
+We set the initial state of the component to { count: 0 } using the class property syntax.
 
-We also define three lifecycle methods: componentDidMount, componentDidUpdate, and componentWillUnmount, using arrow function syntax.
+We also define three lifecycle methods: 
+componentDidMount, 
+componentDidUpdate, 
+and componentWillUnmount, using arrow function syntax.
 
-componentDidMount is called after the component is mounted to the DOM. In this example, we log a message to the console when the component is mounted.
+componentDidMount is called after the component is mounted to the DOM.
+ In this example, we log a message to the console when the component is mounted.
 
 componentDidUpdate is called after the component's state or props have been updated. In this example, we log a message to the console when the component's count state changes.
 
