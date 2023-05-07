@@ -6,18 +6,23 @@ import React, { useEffect, useState } from 'react'
 **/
 
 export const Timer = (props) => {
+     // state variable
+     const [time, setTime] = useState(new Date())
+     const[name,setName]=useState('jp')
 
-    const [time, setTime] = useState(new Date())
-
-    useEffect(()=>{
-        const timer=setInterval(()=>{
-          setTime(new Date());
+     useEffect(()=>{
+        setInterval(()=>{
+          setTime(new   Date())
         },1000)
-    },[])
+        setName("ram")
+     })
+
+    
 
     return (
         <>
             <div>Timer</div>
+            <div>{name}</div>
             <div>{time.toLocaleTimeString()}</div>
         </>
     )

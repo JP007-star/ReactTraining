@@ -1,12 +1,13 @@
-import React from "react";
+import React from 'react'
 
+/**
+* @author
+* @function Footer
+**/
 
+export const Footer = (props) => {
+  return(
+    <div>Footer</div>
+   )
 
-export const Footer=() =>{
-  return (
-    <>
-     <h1>Footer</h1>
-    </>
-   
-  )
-}
+ }
